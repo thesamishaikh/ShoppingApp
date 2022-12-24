@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetails">
+
+    <ImageView
+        android:id="@+id/product_img_details"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/sampleimg"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/product_title_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="WHITE COTTON UNSTITCHED KAMEEZ SHALWAR"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/product_img_details" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:id="@+id/product_price_details"
+        android:gravity="center"
+        android:text="PKR2,990.00"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@id/product_title_details" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/totalqtylayout"
+        app:layout_constraintTop_toBottomOf="@id/product_price_details">
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/totalqtyplaceholder"
+            android:textSize="25dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/product_price_details"
+            android:layout_height="wrap_content"
+            android:text="Total QTY: "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/totalqty"
+            android:textSize="25dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/product_price_details"
+            android:layout_height="wrap_content"
+            android:text="10"/>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/qtylayout"
+        app:layout_constraintTop_toBottomOf="@id/totalqtylayout"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Add QTY"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/add"
+            android:onClick="add"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_add_circle_outline_24"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:gravity="center"
+            android:id="@+id/value"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:fontFamily="sans-serif-black"/>
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="minus"
+            android:id="@+id/minus"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_remove_circle_outline_24"/>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/addcartbtn"
+        android:id="@+id/totalpricelayout">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:text="Sub Total"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/subtotal"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="0"/>
+    </LinearLayout>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add to cart"
+        android:id="@+id/addcartbtn"
+        android:onClick="addcart"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
